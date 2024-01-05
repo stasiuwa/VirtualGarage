@@ -1,0 +1,19 @@
+body {
+    background: #2d3748;
+}
+body img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.navbar-custom {
+    background: #2a2021;
+}
+.nav-item {
+    text-align: center;
+    width: 22.5%;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
