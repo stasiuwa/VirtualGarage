@@ -27,3 +27,4 @@ Route::get('/cars/posts/create', [PostController::class, 'create']);
 // przerzuca login,register,home itd
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
