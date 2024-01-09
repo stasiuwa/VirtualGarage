@@ -8,37 +8,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <link href="/css/app.css" rel="stylesheet">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <title>@yield('title')</title>
-
 </head>
 <body>
-<div>
-    <img src="@yield('image')" />
-    @section('navbar')
+    <div class="menu-container">
+        <img class="img-fluid img" src="@yield('image')"/>
         <div>
-            <ul class="nav nav-underline navbar-custom" style="justify-content: center; color: white">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
-                </li>
-            </ul>
+            @yield('img-content')
         </div>
-    @show
-</div>
-<div>
-    <div style="color: wheat; font-size: 200%">
+    </div>
+{{--    @section('navbar')--}}
+{{--        <div class="nav-container">--}}
+{{--            <ul class="nav nav-underline navbar-custom" style="justify-content: center; color: white">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" aria-current="page" href="@yield('link1')">Active</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="@yield('link2')">Link</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="@yield('link3')">Link</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="@yield('link4')">Disabled</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    @show--}}
+    <div>
         @yield('content')
     </div>
-</div>
-
+    <footer>
+        <div class="footer menu-text">@PW</div>
+    </footer>
 </body>
 </html>

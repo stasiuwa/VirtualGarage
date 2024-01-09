@@ -1,19 +1,122 @@
-body {
-    background: #2d3748;
+* {
+    font-family: Bahnschrift, sans-serif;
 }
-body img {
-    max-height: 100%;
+
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#211715)) fixed;
+}
+.body-container {
+    display: flex;
+    flex-flow: nowrap;
     width: 100%;
-    object-fit: cover;
+}
+.nav-container {
+    width: 100%;
+
 }
 .navbar-custom {
-    background: #2a2021;
+    background: #211f21;
+    font-size: 150%;
+}
+
+.menu-container {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+}
+.img {
+    max-width: 100%;
+    display: block;
+}
+.on-image {
+    position: absolute;
+}
+.menu-text {
+    font-family: Bahnschrift, sans-serif;
+    color: white;
+    font-size: 7vw;
+    font-weight: bold;
+
+    bottom: 1%;
+    left: 2%;
+}
+.menu-btn {
+    text-align: center;
+    right: 5%;
+    bottom: 6.5%;
+}
+.login-button {
+    width: 20vw;
+    font-size: 2vw;
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    text-decoration: black;
+    color: #cf4a4a;
+    font-size: 4vw;
+
+}
+.logo-img {
+    width: 10%;
 }
 .nav-item {
+    padding: 1%;
     text-align: center;
     width: 22.5%;
 }
 .nav-link {
     text-decoration: none;
     color: white;
+}
+.footer {
+    width: 100%;
+    background: #211715;
+    color: whitesmoke;
+    font-size: 80%;
+    text-align: center;
+}
+.user-btn {
+    padding: 1vw;
+    min-width: 20vw;
+    max-width: 35vw;
+    border-radius: 2vw;
+    background: rgba(81, 52, 22, 0.66)    /*  przezroczyste tylko tlo */
+}
+.user-btn-title {
+    font-size: 2vw;
+    color: white;
+}
+.user-btn-links {
+    display: flex;
+}
+.user-btn-text {
+    background: #675b51;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vw;
+    border-radius: 3vw;
+    padding: 1vw;
+    margin: 1vw;
+}
+.form-bar {
+    width: 100%;
+    margin-bottom: 10vw;
+    margin-top: 2vw;
+}
+.form-back {
+    font-size: 1.5vw;
+    width: 30%;
+}
+.form-title {
+    margin-top: 12.5%;
+    width: 40%;
+    text-align: center;
+    font-size: 3vw;
+}
+.form-details {
+    width: 30%;
+    font-size: 2vw;
+    text-align: right;
 }
