@@ -46,8 +46,8 @@ body {
 }
 .menu-btn {
     text-align: center;
-    right: 5%;
-    bottom: 6.5%;
+    right: 3%;
+    bottom: 3.5%;
 }
 .login-button {
     width: 20vw;
@@ -64,7 +64,9 @@ body {
 .logo-img {
     width: 10%;
 }
-
+.li {
+    margin-left: 5vw;
+}
 .footer {
     width: 100%;
     background: #211715;
@@ -77,23 +79,26 @@ body {
     min-width: 20vw;
     max-width: 35vw;
     border-radius: 2vw;
-    background: rgba(81, 52, 22, 0.66)    /*  przezroczyste tylko tlo */
+    background: rgba(81,78,81,0.5)    /*  przezroczyste tylko tlo */
 }
 .user-btn-title {
     font-size: 2vw;
     color: white;
 }
 .user-btn-links {
+    background: rgba(131,134,140,0.4);
+    border-radius: 2vw;
     display: flex;
 }
 .user-btn-text {
-    background: #675b51;
+    padding: 1vw;
     text-decoration: none;
-    color: white;
+    color: wheat;
     font-size: 1.5vw;
     border-radius: 3vw;
-    padding: 1vw;
-    margin: 1vw;
+}
+.user-btn-text:hover {
+    color: black;
 }
 .form-bar {
     width: 100%;
@@ -130,6 +135,7 @@ body {
     color: white;
 }
 .nav-item:hover {
+    cursor: pointer;
     background: #2a221f;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -185,6 +191,10 @@ h1,h2,h3,h4,h5,h6 {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    overflow-y: scroll;
+}
+.cars-container::-webkit-scrollbar{
+    display: none; /*schowanie scrollbara*/
 }
 .car {
     align-self: center;
@@ -192,4 +202,15 @@ h1,h2,h3,h4,h5,h6 {
     background: #262626;
     width: 95%;
     height: 4vw;
+}
+#topBtn {
+    border: none;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    background-color: #ff4c4c;
+}
+#topBtn a {
+    text-decoration: none;
+    color: black;
 }

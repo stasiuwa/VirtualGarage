@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Car;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -10,9 +11,11 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(int $id)
     {
-
+        $car = Car::find($id);
+//        $posts = Post::all();
+        return view('/cars/posts/details', ['car' => $car]);
     }
 
     /**

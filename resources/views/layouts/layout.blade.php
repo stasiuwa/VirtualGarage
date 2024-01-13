@@ -19,7 +19,7 @@
             @yield('img-content')
         </div>
     </div>
-{{--    @section('navbar')--}}
+    @section('navbar')
 {{--        <div class="nav-container">--}}
 {{--            <ul class="nav nav-underline navbar-custom" style="justify-content: center; color: white">--}}
 {{--                <li class="nav-item">--}}
@@ -36,7 +36,7 @@
 {{--                </li>--}}
 {{--            </ul>--}}
 {{--        </div>--}}
-{{--    @show--}}
+    @show
     <div>
         @yield('content')
     </div>

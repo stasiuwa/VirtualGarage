@@ -18,13 +18,18 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('guest');
 
-Route::resource('cars', CarController::class);
-
-Route::get('/cars/posts/create', [PostController::class, 'create']);
-
-// przerzuca login,register,home itd
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::middleware('auth')->group(function (){
+    Route::resource('cars', CarController::class)->middleware('auth');
+    Route::post('cars', [CarController::class, 'store'])->middleware('auth');
+    Route::prefix('/cars')->group( function (){
+        Route::get('/{id}/details', [PostController::class, 'index'])->name('carInfo');
+//        Route::get('edit', [CarController::class, 'edit'])->middleware('auth');
+//        Route::post('update', [CarController::class, 'update'])->middleware('auth');
+//        Route::get('details', [CarController::class, 'show'])->middleware('auth');
+    });
+
+});

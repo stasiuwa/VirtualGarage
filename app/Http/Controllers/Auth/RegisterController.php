@@ -47,13 +47,27 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+    protected function validator(array $data){
+
+        $validator =  Validator::make($data, [
+            'name' => ['required', 'string', 'min:3' ,'max:32'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed']
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'] // regex = zawierać co najmniej jedną wielką literę, jedną małą literę i jedną cyfrę.
+//            confirmed jest juz, nie trzeba tu dopisywac
         ]);
+        $validator->setCustomMessages([
+            'unique' => 'Jest już w użyciu',
+            'email' => 'Podaj poprawny adres email',
+            'min' => [
+                'string' => 'Co najmniej :min znaków',
+            ],
+            'max' => [
+                'string' => 'Maksymalna ilość znaków :max ',
+            ],
+            'confirmed' => 'Hasła muszą być identyczne',
+        ]);
+
+        return $validator;
     }
 
     /**
