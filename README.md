@@ -4,7 +4,6 @@ Projekt zaliczeniowy z przedmiotu **PROGRAMOWANIE APLIKACJI INTERNETOWYCH**  (se
 
 ### Wykorzystano 
 - pakiet **XAMPP**
-- menadżer pakietów **Composer**
 - framework **Laravel**
 - **PHP 8.1**
 
