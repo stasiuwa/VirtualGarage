@@ -1,6 +1,6 @@
 # Wirtualny Garaż
 
-Projekt zaliczeniowy z przedmiotu **PROGRAMOWANIE APLIKACJI INTERNETOWYCH**  (semestr V) służąca do zarządzania autami. 
+Projekt zaliczeniowy z przedmiotu **PROGRAMOWANIE APLIKACJI INTERNETOWYCH**  (semestr V) - strona służąca do zarządzania autami. 
 
 ### Wykorzystano 
 - pakiet **XAMPP**
