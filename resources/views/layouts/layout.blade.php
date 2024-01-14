@@ -19,24 +19,6 @@
             @yield('img-content')
         </div>
     </div>
-    @section('navbar')
-{{--        <div class="nav-container">--}}
-{{--            <ul class="nav nav-underline navbar-custom" style="justify-content: center; color: white">--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" aria-current="page" href="@yield('link1')">Active</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="@yield('link2')">Link</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="@yield('link3')">Link</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="@yield('link4')">Disabled</a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-    @show
     <div>
         @yield('content')
     </div>

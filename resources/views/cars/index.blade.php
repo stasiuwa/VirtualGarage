@@ -15,11 +15,6 @@
             <h1 style="font-size: 4vw">Witaj {{ Auth::user()->name }}!</h1>
         </div>
     @endauth
-    @guest
-        @if (Route::has('login'))
-            <a class="on-image menu-text" href="{{ route('login') }}">ZALOGUJ SIĘ &#x2192;</a>
-        @endif
-    @endguest
 @stop
 
 @section('content')
@@ -68,7 +63,13 @@
                     </div>
                 </div>
                 <div class="cars-bar">
-                    <div class="cars-bar-details"></div>
+                    <div class="cars-bar-details">
+                        <div class="cars-bar-name">
+                            <div>MARKA</div>
+                            <div>MODEL</div>
+                            <div>ROCZNIK</div>
+                        </div>
+                    </div>
                     <div class="cars-container">
                         @forelse($cars as $car)
                             <div class="car"><x-car-item :car="$car"></x-car-item></div>
@@ -79,29 +80,7 @@
                 </div>
             </div>
         </div>
-{{--            <script>--}}
-{{--                --}}{{--            skrpyt dodajacy scroll na góre strony do przycisku, pojawianie sie po okreslonej wysokosci nie dzial --}}
-{{--                // let mybutton = document.getElementById('topBtn');--}}
-{{--                // window.scroll = function () {scrollFunction()};--}}
-{{--                // function scrollFunction() { (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? mybutton.style.display = "block" : mybutton.style.display = "none"; }--}}
-{{--                function topFunction() {--}}
-{{--                    document.documentElement.scrollTop = 0;--}}
-{{--                }--}}
-{{--            </script>--}}
-{{--            <button id="topBtn" onclick="topFunction()">--}}
-{{--                /\ do góry--}}
-{{--            </button>--}}
-
-            @else
-                <div style="margin-top: 10vw;height: 30vw; color: white; justify-content: center; text-align: center">
-                    <h1>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h1>
-                    <h2>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h2>
-                    <h3>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h3>
-                    <h4>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h4>
-                    <h5>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h5>
-                    <h6>ZAWARTOŚĆ DOSTĘPNA TYLKO DLA ZALOGOWANYCH UŻYTKOWNIKÓW</h6>
-                </div>
-        </div>
-
     @endauth
+    @guest
+    @endguest
 @stop

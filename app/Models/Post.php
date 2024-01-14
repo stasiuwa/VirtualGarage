@@ -21,4 +21,5 @@ class Post extends Model
      * relacja z tabela Cars, jeden wpis moze nalezec tylko do jednego auta
      */
     public function car(){ return $this->belongsTo(Car::class); }
+    public function user(){ return $this->belongsTo(User::class); }
 }

@@ -1,26 +1,24 @@
 
-<div class="car-item-container" style="color: white; display: flex; flex-flow: row">
-    <div>Marka:{{$car->brand}}</div>
-    <div>Model:{{$car->model}}</div>
-    <div>Rocznik:{{$car->car_year}}</div>
-    <a id="modalBtn2" class="" data-toggle="modal" data-target="#editModal{{$car->id}}">EDYTUJ</a>
-    <form method="post" action="/cars/{{$car->id}}">
-        @method('delete')
-        @csrf
-        <button>Delete</button>
-    </form>
-    <a href="{{ route('carInfo', ['id' => $car->id]) }}">szczegoly</a>
+<div style="display: flex;">
+    <img style="max-width: 3vw; margin-left: 1vw; margin-right: 2vw; margin-top: 0.25vw" src="{{ url('/img/car-round.png') }}"/>
+    <div class="car-item-container" style="">
+        <div class="car-item">{{$car->brand}}</div>
+        <div class="car-item">{{$car->model}}</div>
+        <div class="car-item">{{$car->car_year}}</div>
+        <a id="modalBtn2"  data-toggle="modal" data-target="#editModal{{$car->id}}"><button class="car-item car-item-btn" onclick="">EDYTUJ</button></a>
+        <a href=" {{ route('carInfo', ['id' => $car->id]) }}"><button class="car-item car-item-btn" style="color: #ff4c4c">SZCZEGOLY</button></a>
+    </div>
 </div>
 
 <div class="modal fade" id="editModal{{$car->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">EDUTYJ INFO O AUTO</h5>
+                <h5 class="modal-title" id="exampleModalLabel">EDYTUJ INFO O AUCIE</h5>
             </div>
             @if($errors->any())
                 <div class="alert alert-danger">
-                    <h5>Popraw wprowadzone dane</h5>
+                    <h5>Popraw wprowadzone dane!</h5>
                 </div>
             @endif
 
@@ -39,7 +37,7 @@
 
                     <div class="form-group">
                         <label>Model</label>
-                        <input type="text" name="model" class="form-control @error('model') is-invalid @enderror" value="{{ $car->brand }}" placeholder="( Zafira )">
+                        <input type="text" name="model" class="form-control @error('model') is-invalid @enderror" value="{{ $car->model }}" placeholder="( Zafira )">
                         @error('model')
                         <span class="invalid-feedback">Wprowadz model auta</span>
                         @enderror
@@ -68,7 +66,9 @@
                         <span class="invalid-feedback">Wprowadz przebieg auta w formacie samych liczb</span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+                    <div class="modal-btn">
+                        <button type="submit" class="form-btn">Zapisz zmiany</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -40,11 +40,11 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'brand' => ['required', 'string','max:30'],
-            'model' => ['required', 'string', 'max:30'],
+            'brand' => ['required', 'string','max:16'],
+            'model' => ['required', 'string', 'max:16'],
             'car_year' => ['required', 'integer','min:1886', 'max:' . date("Y")],
-            'engine' => ['required', 'string','max:20'],
-            'mileage' => ['required', 'integer']
+            'engine' => ['required', 'string','max:16'],
+            'mileage' => ['required', 'integer', 'max:8000000']
         ]);
 
         $car = new Car;

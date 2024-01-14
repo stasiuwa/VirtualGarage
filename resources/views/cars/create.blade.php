@@ -53,7 +53,9 @@
                         <span class="invalid-feedback">Wprowadz przebieg auta w formacie samych liczb</span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Dodaj auto</button>
+                    <div class="modal-btn">
+                        <button type="submit" class="form-btn">Dodaj auto</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -27,6 +27,8 @@ Route::middleware('auth')->group(function (){
     Route::post('cars', [CarController::class, 'store'])->middleware('auth');
     Route::prefix('/cars')->group( function (){
         Route::get('/{id}/details', [PostController::class, 'index'])->name('carInfo');
+        Route::get('/{id}/posts/create', [PostController::class, 'create']);
+        Route::get('/posts/index', [PostController::class, 'show']);
 //        Route::get('edit', [CarController::class, 'edit'])->middleware('auth');
 //        Route::post('update', [CarController::class, 'update'])->middleware('auth');
 //        Route::get('details', [CarController::class, 'show'])->middleware('auth');

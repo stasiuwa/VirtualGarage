@@ -47,4 +47,5 @@ class User extends Authenticatable
      * relacja z tabela Cars, użytkownik może miec wiele aut
      */
     public function cars() { return $this->hasMany(Car::class); }
+    public function posts() { return $this->hasMany(Post::class); }
 }
