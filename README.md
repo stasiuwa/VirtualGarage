@@ -4,7 +4,7 @@ Projekt zaliczeniowy z przedmiotu **PROGRAMOWANIE APLIKACJI INTERNETOWYCH**  (se
 
 ### Wykorzystano 
 - pakiet **XAMPP**
-- framework **Laravel**
+- **Laravel** 10.10
 - **PHP 8.1**
 
 ## Uruchamianie
