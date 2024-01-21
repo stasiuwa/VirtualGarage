@@ -15,7 +15,7 @@ class PostController extends Controller
     {
         $car = Car::find($id);
 //        $posts = Post::all();
-        return view('/cars/posts/details', ['car' => $car]);
+        return view('/cars/details', ['car' => $car]);
     }
 
     /**

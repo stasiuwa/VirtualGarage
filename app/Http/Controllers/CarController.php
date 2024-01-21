@@ -33,9 +33,8 @@ class CarController extends Controller
     public function create(Request $request) {
 
     }
-    public function show(Car $post)
+    public function show(int $id)
     {
-        //
     }
     public function store(Request $request)
     {
@@ -64,7 +63,7 @@ class CarController extends Controller
     public function edit(int $id)
     {
         $car = Car::find($id);
-        return redirect('cars', ['car' => $car]);
+        return view('cars/edit', ['car' => $car]);
     }
     /**
      * Update the specified resource in storage.
@@ -89,9 +88,9 @@ class CarController extends Controller
                 $oldCar->mileage=$newCar['mileage'];
                 $oldCar->save();
             }
-            return back();
+            return redirect('cars/' . $id . '/details');
         }catch (UniqueConstraintViolationException $e) {
-            return back()->withErrors(['id' => 'Niepoprawne id samochodu'])->withInput();
+            return redirect('cars')->withErrors(['id' => 'Niepoprawne id samochodu'])->withInput();
         }
     }
     /**

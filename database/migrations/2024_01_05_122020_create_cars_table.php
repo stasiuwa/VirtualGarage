@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('brand');
             $table->string('model');
-            $table->date('car_year');
+            $table->smallInteger('car_year');
             $table->string('engine');
             $table->bigInteger('mileage');
             $table->timestamps();

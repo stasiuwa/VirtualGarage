@@ -13,7 +13,7 @@
                 <button class="car-details-back-btn">USUN</button>
             </form>
             <a id="modalPostBtn" data-toggle="modal" data-target="#addPostModal"><button class="car-details-back-btn">DODAJ WPIS</button></a>
-            <a id="modalCarBtn" data-toggle="modal" data-target="#editModal{{$car->id}}"><button class="car-details-back-btn">EDYTUJ DANE</button></a>
+            <a id="modalCarBtn" data-toggle="modal" data-target="#addCarModalExtended"><button class="car-details-back-btn">EDYTUJ DANE</button></a>
             <a href="{{ url('/cars/posts/index') }}" ><button class="car-details-back-btn">WSZYSTKIE WPISY</button></a>
             <a href="{{ url('/cars') }}" ><button class="car-details-back-btn">GARAŻ</button></a>
         </div>
@@ -144,7 +144,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Dodaj swoją furmankę!</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Co sie zmieniło?</h5>
                 </div>
                 @if($errors->any())
                     <div class="alert alert-danger">
@@ -152,7 +152,9 @@
                     </div>
                 @endif
 
-                <form action="/cars" method="post">
+                <form action="/cars/{{$car->id}}" method="POST">
+                    @method('patch')
+                    @csrf
                     {{ csrf_field() }}
                     <div class="modal-body">
 
@@ -196,7 +198,7 @@
                             @enderror
                         </div>
                         <div class="modal-btn">
-                            <button type="submit" class="form-btn">Dodaj auto</button>
+                            <button type="submit" class="form-btn">Zmień dane</button>
                         </div>
                     </div>
                 </form>

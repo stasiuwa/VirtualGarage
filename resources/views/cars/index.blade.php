@@ -74,7 +74,6 @@
                         @forelse($cars as $car)
                             <div class="car"><x-car-item :car="$car"></x-car-item></div>
                         @empty
-                            <x-car-item></x-car-item>
                         @endforelse
                     </div>
                 </div>
