@@ -14,6 +14,10 @@ Z pakietu XAMPP uruchomić serwer **Apache**, baze danych **mysql**. W folderze 
 
 zainstalować pakiety
 ```bash
+composer install
+```
+
+```bash
 npm install
 ```
 <br/>
