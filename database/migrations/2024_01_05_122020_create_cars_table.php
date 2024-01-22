@@ -16,9 +16,23 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('brand');
             $table->string('model');
+            $table->string('version');
+            $table->string('generation');
             $table->smallInteger('car_year');
+            $table->string('drive');
+            $table->string('vin');
             $table->string('engine');
+            $table->smallInteger('engine_cap');
+            $table->string('fuel');
+            $table->smallInteger('power');
+            $table->smallInteger('torque');
             $table->bigInteger('mileage');
+            $table->smallInteger('paint_code');
+            $table->string('reg_plate');
+            $table->date('service_date');
+            $table->string('insurance');
+            $table->date('insurance_pay_time');
+            $table->double('insurance_price');
             $table->timestamps();
         });
     }

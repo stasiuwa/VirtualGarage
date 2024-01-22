@@ -26,9 +26,12 @@ Route::middleware('auth')->group(function (){
     Route::resource('cars', CarController::class)->middleware('auth');
     Route::post('cars', [CarController::class, 'store'])->middleware('auth');
     Route::prefix('/cars')->group( function (){
+//        Route::resource('posts', PostController::class);
         Route::get('/{id}/details', [PostController::class, 'index'])->name('carInfo');
-        Route::get('/{id}/posts/create', [PostController::class, 'create']);
-        Route::get('/posts/index', [PostController::class, 'show']);
+        Route::get('/{id}/posts', [PostController::class, 'show'])->name('carPosts');
+        Route::post('/{id}/posts', [PostController::class, 'store'])->name('addPost');
+        Route::delete('/delete-post/{id}', [PostController::class, 'destroy'])->name('post_delete');
+        Route::get('/cars/{car_id}/posts/{post_id}/edit', [PostController::class, 'edit'])->name('post_edit');
 //        Route::get('edit', [CarController::class, 'edit'])->middleware('auth');
 //        Route::post('update', [CarController::class, 'update'])->middleware('auth');
 //        Route::get('details', [CarController::class, 'show'])->middleware('auth');

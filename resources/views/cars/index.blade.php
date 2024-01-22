@@ -19,7 +19,6 @@
 
 @section('content')
     @auth
-
         @if (Session::has('success'))
             <div class="alert alert-success">
                 <p>{{ \Session::get('success') }}</p>
@@ -55,21 +54,18 @@
         <div class="card-body">
             <div class="garage-main">
                 <div class="sidebar">
-                    <div class="sidebar-title"></div>
+                    <div class="sidebar-title">OSTATNIE WPISY</div>
                     <div class="post-container">
-                        <div class="sidebar-post"></div>
-                        <div class="sidebar-post"></div>
-                        <div class="sidebar-post"></div>
+                        @foreach($posts as $post)
+                            <a class="sidebar-post" href="{{ route( 'carPosts', ['id' => \App\Models\Car::find($post->car_id)->id]) }}">
+                                <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->brand}}</div>
+                                <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->model}}</div>
+                                <div class="sidebar-post-item" style="width: 60%; text-align: right; margin-left: 0; margin-right: 0.5vw">{{$post->type}}</div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="cars-bar">
-                    <div class="cars-bar-details">
-                        <div class="cars-bar-name">
-                            <div>MARKA</div>
-                            <div>MODEL</div>
-                            <div>ROCZNIK</div>
-                        </div>
-                    </div>
                     <div class="cars-container">
                         @forelse($cars as $car)
                             <div class="car"><x-car-item :car="$car"></x-car-item></div>

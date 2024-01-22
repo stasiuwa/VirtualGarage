@@ -1,5 +1,5 @@
 <div class="modal fade" id="addCarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Dodaj swoją furmankę!</h5>
@@ -12,7 +12,7 @@
 
             <form action="/cars" method="POST">
                 {{ csrf_field() }}
-                <div class="modal-body">
+                <div class="modal-form-body">
 
                     <div class="form-group">
                         <label>Marka</label>
