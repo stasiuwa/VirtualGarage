@@ -26,6 +26,12 @@ class PostController extends Controller
 //        $posts = Post::all()->where('car_id','=', $id);
 //          nie działa tutaj ten sposob - podaje obiekt innego typu, a w przypadku aut juz tak
         $posts = DB::table('posts')->where('car_id','=', $id)->orderBy('mileage', 'desc')->get();
+//        pzrypisanie najwiekszego przebiegu z tabeli wpisów do przebiegu auta
+        $temp = DB::table('posts')->where('car_id','=', $id)->max('mileage');
+        if($temp){
+            $car->mileage = $temp;
+            $car->save();
+        }
         return view('/cars/posts/index', ['posts' => $posts, 'car' => $car]);
     }
     /**
@@ -60,12 +66,6 @@ class PostController extends Controller
         $post->details = $request->input('details');
         $post->price = $request->input('price');
 
-        $newMileage = $request->input('mileage');
-
-        if($newMileage > $car->mileage) {
-            $car->mileage = $newMileage;
-            $car->save();
-        }
         $post->save();
 
         return redirect('cars/' . $id . '/posts');
@@ -79,16 +79,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id)
-    {
-        $post = Post::find($id);
-        return view('cars.posts.edit', ['post' => $post]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, int $id)
+    public function edit(Request $request,int $car_id, int $post_id)
     {
         $newPost = $request->validate([
             'type' => ['required', 'string','max:64'],
@@ -98,8 +89,8 @@ class PostController extends Controller
         ]);
 
         try {
-            $oldPost = Post::find($id);
-            if($oldPost){
+            $oldPost = Post::find($post_id);
+            if ($oldPost) {
                 $oldPost->type = $newPost['type'];
                 $oldPost->details = $newPost['details'];
                 $oldPost->price = $newPost['price'];
@@ -107,10 +98,17 @@ class PostController extends Controller
 
                 $oldPost->save();
             }
+            return redirect('cars/' . $car_id . '/posts');
         } catch (UniqueConstraintViolationException) {
             return redirect('posts')->withErrors(['id' => 'Niepoprawne id postu'])->withInput();
+        }
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, int $id)
+    {
     }
 
     /**

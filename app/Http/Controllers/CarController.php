@@ -72,18 +72,18 @@ class CarController extends Controller
         $car->mileage=$request->input('mileage');
 
 //        domyslne wartosci
-        $car->version="";
-        $car->generation="";
-        $car->drive="";
-        $car->vin="";
+        $car->version=null;
+        $car->generation=null;
+        $car->drive=null;
+        $car->vin=null;
         $car->engine_cap=0;
-        $car->fuel="";
+        $car->fuel=null;
         $car->power=0;
         $car->torque=0;
         $car->paint_code=0;
-        $car->reg_plate="";
+        $car->reg_plate=null;
         $car->service_date=date("Y-m-d");
-        $car->insurance="";
+        $car->insurance=null;
         $car->insurance_pay_time=date("Y-m-d");
         $car->insurance_price=0;
 

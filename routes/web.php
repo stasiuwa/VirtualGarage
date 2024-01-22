@@ -31,7 +31,9 @@ Route::middleware('auth')->group(function (){
         Route::get('/{id}/posts', [PostController::class, 'show'])->name('carPosts');
         Route::post('/{id}/posts', [PostController::class, 'store'])->name('addPost');
         Route::delete('/delete-post/{id}', [PostController::class, 'destroy'])->name('post_delete');
-        Route::get('/cars/{car_id}/posts/{post_id}/edit', [PostController::class, 'edit'])->name('post_edit');
+        Route::post('/cars/{car_id}/posts/{post_id}', [PostController::class, 'edit'])->name('editPost');
+
+//        Route::put('/cars/{car_id}/posts/{post_id}', [PostController::class, 'update'])->name('post_update');
 //        Route::get('edit', [CarController::class, 'edit'])->middleware('auth');
 //        Route::post('update', [CarController::class, 'update'])->middleware('auth');
 //        Route::get('details', [CarController::class, 'show'])->middleware('auth');

@@ -165,7 +165,7 @@
                     <div class="modal-form-body" >
                         <div class="modal-form-content">
                             <label>Marka</label>
-                            <input type="text" name="brand" class="form-control @error('brand') is-invalid @enderror" value="{{ $car->brand  }}" placeholder="( Saab )">
+                            <input type="text" name="brand" class="form-control @error('brand') is-invalid @enderror" value="{{ $car->brand }}" placeholder="( Saab )">
                             @error('brand')
                             <span class="invalid-feedback">Wprowadz marke auta</span>
                             @enderror

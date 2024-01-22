@@ -60,6 +60,7 @@
                             <a class="sidebar-post" href="{{ route( 'carPosts', ['id' => \App\Models\Car::find($post->car_id)->id]) }}">
                                 <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->brand}}</div>
                                 <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->model}}</div>
+                                <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->car_year}}</div>
                                 <div class="sidebar-post-item" style="width: 60%; text-align: right; margin-left: 0; margin-right: 0.5vw">{{$post->type}}</div>
                             </a>
                         @endforeach
