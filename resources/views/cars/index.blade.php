@@ -54,8 +54,7 @@
         <div class="card-body">
             <div class="garage-main">
                 <div class="sidebar">
-                    <div class="sidebar-title">OSTATNIE WPISY</div>
-                    <div class="post-container">
+                    <div class="post-container" style="border: none">
                         @foreach($posts as $post)
                             <a class="sidebar-post" href="{{ route( 'carPosts', ['id' => \App\Models\Car::find($post->car_id)->id]) }}">
                                 <div class="sidebar-post-item">{{\App\Models\Car::find($post->car_id)->brand}}</div>

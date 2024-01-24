@@ -12,19 +12,25 @@
     </div>
 @endsection
 @section('content')
+    <div class="post post-header" style="margin-left: 5%;">
+        <div class="post-item" style="width: 15%"></div>
+        <div class="post-item" style="width: 35%">OPIS</div>
+        <div class="post-item" style="width: 20%">CENA</div>
+        <div class="post-item" style="width: 5%">PRZEBIEG</div>
+    </div>
     @foreach($posts as $post)
         <div class="post">
-            <div class="post-item">{{$post->type}}</div>
-            <div class="post-item">{{$post->details}}</div>
-            <div class="post-item">Cena: {{$post->price}} zł</div>
-            <div class="post-item">Przebieg: {{$post->mileage}} km</div>
+            <div class="post-item" style="width: 15%">{{$post->type}}</div>
+            <div class="post-item" style="width: 45%">{{$post->details}}</div>
+            <div class="post-item" style="width: 10%">{{$post->price}} zł</div>
+            <div class="post-item" style="width: 15%">{{$post->mileage}} km</div>
             <div class="modal fade" id="editPostModal{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="editPostModalLabel">Edycja Wpisu</h5>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-form-body">
                             <form action="{{route('editPost', ['car_id'=>$car->id, 'post_id' => $post->id])}}" method="post">
                                 @csrf
                                 @method('post')
@@ -48,18 +54,23 @@
                                     <label for="price">Cena:</label>
                                     <input type="number" name="price" value="{{ $post->price }}" class="form-control" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary submit-button">Zapisz zmiany</button>
+                                <div class="modal-form-body">
+                                    <button type="submit" class="btn btn-primary modal-btn">Zapisz zmiany</button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <a id="modalBtn" class="" data-toggle="modal" data-target="#editPostModal{{$post->id}}"><button class="car-item car-item-btn">EDYTUJ</button></a>
-            <form action="{{ route('post_delete', ['id' => $post->id]) }}" method="post">
-                @csrf
-                @method('delete')
-                <button class="car-item car-item-btn" style="font-size: 1vw" type="submit" onclick="return confirm('Czy na pewno chcesz usunąć ten rekord?')">X</button>
-            </form>
+            <div style="display: flex; flex-flow: row; margin-top: 1%; margin-right: 5px">
+                <a id="modalBtn" data-toggle="modal" data-target="#editPostModal{{$post->id}}"><button class="car-item car-item-btn" style="color: yellow">EDYTUJ</button></a>
+                <form action="{{ route('post_delete', ['id' => $post->id]) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="car-item car-item-btn" style="width:100%;font-size: 120%; color: red;" type="submit" onclick="return confirm('Czy na pewno chcesz usunąć ten rekord?')">X</button>
+                </form>
+            </div>
+
         </div>
     @endforeach
 {{--    modal dodania wpisu--}}
@@ -114,8 +125,8 @@
                         </div>
 {{--                        <input type="number" name="car_id" value="{{$car->id}}" style="display: none">--}}
 
-                        <div class="modal-btn">
-                            <button type="submit" class="form-btn">Dodaj wpis</button>
+                        <div class="modal-form-body">
+                            <button type="submit" class="modal-btn">Dodaj wpis</button>
                         </div>
                     </div>
                 </form>

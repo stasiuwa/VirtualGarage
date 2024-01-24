@@ -25,17 +25,26 @@
 @section('content')
     @auth
         <div class="car-details-body">
-
-            <div class="car-details-posts-container">
-                @foreach($posts as $post)
-                    <div class="post">
-                        <div class="post-item">{{$post->type}}</div>
-                        <div class="post-item">{{$post->details}}</div>
-                        <div class="post-item">Cena: {{$post->price}} zł</div>
-                        <div class="post-item">Przebieg: {{$post->mileage}} km</div>
+                <div class="car-details-posts-container">
+                    <div class="post post-header" style="background: #131313;">
+                        <div class="post-item" style="color: brown">OSTATNIE WPISY:</div>
+                        <div class="post-item" >OPIS</div>
+                        <div class="post-item" >CENA</div>
+                        <div class="post-item" >PRZEBIEG</div>
                     </div>
-                @endforeach
-            </div>
+                    @forelse($posts as $post)
+                        <div class="post">
+                            <div class="post-item">{{$post->type}}</div>
+                            <div class="post-item">{{$post->details}}</div>
+                            <div class="post-item">{{$post->price}} zł</div>
+                            <div class="post-item">{{$post->mileage}} km</div>
+                        </div>
+                        @empty
+                            <div class="post post-header" style="background: #131313;">
+                                <div class="post-item" style="color: brown; width: 100%">BRAK WPISÓW</div>
+                            </div>
+                    @endforelse
+                </div>
 
             <div class="car-details-container">
 
@@ -43,7 +52,7 @@
                 </div>
 
                 <div class="car-details-info">
-                    <table class="table-custom" style="width: 33%;">
+                    <table class="table-custom">
 
                         <tbody>
                         <tr>
@@ -76,7 +85,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <table class="table-custom" style="width: 33%;">
+                    <table class="table-custom">
                         <tbody>
                         <tr>
                             <td class="table-text">Kod silnika</td>
@@ -109,37 +118,35 @@
                         </tr>
                         </tbody>
                     </table>
-                    <table class="table-custom" style="width: 33%;">
+                    <table class="table-custom" style="width: 60%">
                         <thead>
-                        <th>DOKUMENTY</th>
+                        <tr>
+                            <th>DOKUMENTY</th>
+                            <th></th>
+
+                        </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td class="table-text">Numer rejestracyjny</td>
                             <td>{{$car->reg_plate}}</td>
+
                         </tr>
                         <tr>
                             <td class="table-text">Termin przeglądu</td>
                             <td>{{$car->service_date}}</td>
                         </tr>
-                        </tbody>
-                        <thead>
-                        <tr>
-                            <th>Ubezpieczenie</th>
-                        </tr>
-                        </thead>
-                        <tbody>
                         <tr>
                             <td class="table-text">Typ ubezpieczenia</td>
                             <td>{{$car->insurance}}</td>
                         </tr>
                         <tr>
-                            <td class="table-text">Termin płatności</td>
-                            <td>{{$car->insurance_pay_time}}</td>
-                        </tr>
-                        <tr>
                             <td class="table-text">Cena</td>
                             <td>{{$car->insurance_price}} zł</td>
+                        </tr>
+                        <tr>
+                            <td class="table-text">Termin płatności</td>
+                            <td>{{$car->insurance_pay_time}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -147,7 +154,7 @@
             </div>
         </div>
 {{--    modal do edycji danych o samochodzie--}}
-    <div class="modal fade" id="addCarModalExtended" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade show" id="addCarModalExtended" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content" >
                 <div class="modal-header" >
@@ -311,14 +318,12 @@
                         </div>
                     </div>
                     <div class="modal-form-body">
-                        <div class="modal-btn">
-                            <button type="submit" class="form-btn-custom">Zapisz zmiany</button>
-                        </div>
+                        <button type="submit" class="modal-btn">Zapisz zmiany</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+
         @push('scripts')
             <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
             <script>
