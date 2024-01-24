@@ -47,7 +47,7 @@
             {{--                        </a>--}}
             {{--                    @endif--}}
             {{--                </div>--}}
-            <div style="text-align: right; font-size: 3vw;">
+            <div style="text-align: right;">
                 <button type="submit" class="login-button" style="background: #1d0e0b;">
                     Zaloguj
                 </button>

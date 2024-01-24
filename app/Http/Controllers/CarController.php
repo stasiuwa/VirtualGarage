@@ -28,7 +28,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')->where('user_id','=',Auth::id())->limit('6')->orderBy('mileage', 'desc')->get();
+        $posts = DB::table('posts')->where('user_id','=',Auth::id())->limit('6')->orderBy('updated_at', 'desc')->get();
         $cars = DB::table('cars')->where('user_id','=', Auth::id())->get();
         return view('/cars/index', ['cars' => $cars, 'posts' => $posts]);
     }

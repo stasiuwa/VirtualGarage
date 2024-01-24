@@ -94,9 +94,9 @@
 
                         <div class="form-group">
                             <label>Typ wpisu</label>
-                            <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" placeholder="string max64">
+                            <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" placeholder="olej/hamulce/opony itp">
                             @error('type')
-                            <span class="invalid-feedback">Wprowadz marke auta</span>
+                            <span class="invalid-feedback">Wprowadz typ wpisu</span>
                             @enderror
                         </div>
 
@@ -104,7 +104,7 @@
                             <label>Szczegóły</label>
                             <input type="text" name="details" class="form-control @error('details') is-invalid @enderror" value="{{old('details')}}" placeholder="opis">
                             @error('details')
-                            <span class="invalid-feedback">Wprowadz model auta</span>
+                            <span class="invalid-feedback">Wprowadz opis</span>
                             @enderror
                         </div>
 
@@ -112,7 +112,7 @@
                             <label>Cena</label>
                             <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}" placeholder="cena">
                             @error('price')
-                            <span class="invalid-feedback">Wprowadz poprawny rocznik auta - sam rok, tylko liczby</span>
+                            <span class="invalid-feedback">Wprowadz cene</span>
                             @enderror
                         </div>
 

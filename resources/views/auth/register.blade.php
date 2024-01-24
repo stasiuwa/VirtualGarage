@@ -49,7 +49,7 @@
                         </span>
                 @enderror
             </div>
-            <ul style="font-size: 1vw; margin-left: 15vw">
+            <ul style="font-size: 100%; margin-left: 15%; margin-top: 2%">
                 Hasło powinno zawierać co najmniej
                 <li class="li">jedną wielką literę</li>
                 <li class="li">jedną małą literę</li>
@@ -66,7 +66,7 @@
         </div>
 
         <div style="width: 100%">
-            <input style="margin-left: 10vw;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+            <input style="margin-left: 10%;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                    name="terms" required>
             <label class="form-check-label" for="flexCheckDefault">
                 Akceptuję <a style="color: lightgoldenrodyellow" href="{{ url("/termsofuse.pdf") }}" target="_blank">regulamin
@@ -76,7 +76,7 @@
 
         <div class="row mb-0" style="text-align: right">
             <div style="text-align: center">
-                <button type="submit" class="login-button" style="background: #1d0e0b; margin: 1vw;">
+                <button type="submit" class="login-button" style="background: #1d0e0b; margin: 1%;">
                     Zarejestruj się
                 </button>
             </div>

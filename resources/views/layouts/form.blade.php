@@ -37,8 +37,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card" style="color: white; font-family: Bahnschrift, sans-serif; font-size: 1.5vw">
-                            <div class="card-header" style="display: flex; flex-flow: column; width: 100%; height: 13vw; padding-top: 1vw;  background: #1f1f1f;">
+                        <div class="card" style="color: white; font-family: Bahnschrift, sans-serif; font-size: 150%">
+                            <div class="card-header" style="display: flex; flex-flow: column; width: 100%; height: 13%; padding-top: 1%;  background: #1f1f1f;">
                                 <div style="display: flex; flex-flow: wrap; width: 100%">
                                     <div style="width: 50%"><a class="form-details" href="{{ url('/') }}">STRONA GŁÓWNA</a></div>
                                     <div style="width: 50%; text-align: right"><a class="form-details" style="text-align: right" href="@yield('link')">@yield('link-text')</a></div>
@@ -48,7 +48,7 @@
                                     GARASH
                                 </div>
                             </div>
-                            <div class="card-body" style="background: #262626; padding-top: 2vw">
+                            <div class="card-body" style="background: #262626; padding-top: 2%">
                                 @yield('content')
                             </div>
                         </div>

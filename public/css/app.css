@@ -1,9 +1,12 @@
 * {
     font-family: Bahnschrift, sans-serif;
 }
+html {
 
+}
 body {
     background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#211715)) fixed;
+
 }
 .body-container {
     display: flex;
@@ -51,8 +54,8 @@ body {
     bottom: 3.5%;
 }
 .login-button {
-    width: 20vw;
-    font-size: 2vw;
+    width: 50%;
+    font-size: 120%;
     color: white;
     text-decoration: none;
 }
@@ -69,11 +72,16 @@ body {
     margin-left: 5vw;
 }
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
     background: #170f0f;
     width: 100%;
     border-bottom: black 1px solid;
     color: whitesmoke;
-    font-size: 80%;
+    font-size: 100%;
     text-align: center;
 }
 .user-btn {
@@ -106,7 +114,6 @@ body {
 }
 .form-bar {
     width: 100%;
-    margin-bottom: 5%;
 }
 .form-details {
     opacity: 0.85;
@@ -117,7 +124,7 @@ body {
     color: #cf4a4a;
     width: 100%;
     text-align: center;
-    font-size: 5.5vw;
+    font-size: 300%;
 }
 .img-logo {
     max-width: 15%;
