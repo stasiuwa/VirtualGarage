@@ -1,7 +1,8 @@
 # Wirtualny Garaż
 
 Projekt zaliczeniowy z przedmiotu **PROGRAMOWANIE APLIKACJI INTERNETOWYCH**  (semestr V) - strona służąca do zarządzania autami. 
-Aplikacja webowa do zarządzania flota samochodów ( klasyczny CRUD ).
+    Pozwala na dodawanie, usuwanie, edycje i odczyt z bazy danych posiadanych samochodów. Każdemu autu można uzupełnić podstawowe dane techniczne oraz dodawać wpisy.
+    Wpisy mogą dotyczyć najróżniejszych wydarzeń związanych z autem. W domyśle głownie przeznaczone do zapisywania wymian płynów eksploatacyjnych / serwisu.
 ### Wykorzystano 
 - pakiet **XAMPP**
 - **Laravel** 10.10
